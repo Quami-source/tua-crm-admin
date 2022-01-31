@@ -12,6 +12,8 @@ import Table from '../components/table/Table'
 
 import Badge from '../components/badge/Badge'
 
+import '../components/status-card/statuscard.css'
+
 import statusCards from '../assets/JsonData/status-card-data.json'
 
 import Workers from '../components/table/Workers'
@@ -198,7 +200,7 @@ const Dashboard = () => {
             <div className="row">
                 <div className="col-6">
                     <div className="row">
-                        {
+                        {/* {
                             statusCards.map((item, index) => (
                                 <div className="col-6" key={index}>
                                     <StatusCard
@@ -208,9 +210,59 @@ const Dashboard = () => {
                                     />
                                 </div>
                             ))
-                        }
+                        } */}
+                        <div className='col-6'>
+                            <Link to="/users" className='status-card'>
+                                <div className="status-card__icon">
+                                    <i className="bx bx-shopping-bag"></i>
+                                </div>
+                                <div className="status-card__info">
+                                    <h4>10,220</h4>
+                                    <span>Total Users</span>
+                                </div>
+                            </Link>
+                        </div>
+
+                        {/* workers-card */}
+                        <div className='col-6'>
+                            <Link to="/workers" className='status-card'>
+                                <div className="status-card__icon">
+                                    <i className="bx bx-cart"></i>
+                                </div>
+                                <div className="status-card__info">
+                                    <h4>5,023</h4>
+                                    <span>Total Workers</span>
+                                </div>
+                            </Link>
+                        </div>
+                        {/* other-cards */}
+                        <div className='col-6'>
+                            <button onClick={()=>console.log("I was pressed")} className='status-card'>
+                                <div className="status-card__icon">
+                                    <i className="bx bx-dollar-circle"></i>
+                                </div>
+                                <div className="status-card__info">
+                                    <h4>$2,632</h4>
+                                    <span>Total income</span>
+                                </div>
+                            </button>
+                        </div>
+                        {/* other-cards */}
+                        <div className='col-6'>
+                            <button onClick={()=>console.log("I was pressed")} className='status-card'>
+                                <div className="status-card__icon">
+                                    <i className="bx bx-receipt"></i>
+                                </div>
+                                <div className="status-card__info">
+                                    <h4>1,711</h4>
+                                    <span>Total orders</span>
+                                </div>
+                            </button>
+                        </div>
+
                     </div>
                 </div>
+
                 <div className="col-6">
                     <div className="card full-height">
                         {/* chart */}
@@ -265,7 +317,7 @@ const Dashboard = () => {
                     </div>
                 </div>
             </div>
-            <div className='row'>
+            {/* <div className='row'>
                 <div className='col-12'>
                     <div className='card'>
                         <div className='card__body'>
@@ -284,7 +336,7 @@ const Dashboard = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

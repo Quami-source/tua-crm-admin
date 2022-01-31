@@ -4,7 +4,7 @@ import './statuscard.css'
 
 const StatusCard = props => {
     return (
-        <div className='status-card'>
+        <button onClick={()=>console.log("I was pressed")} className='status-card'>
             <div className="status-card__icon">
                 <i className={props.icon}></i>
             </div>
@@ -12,7 +12,7 @@ const StatusCard = props => {
                 <h4>{props.count}</h4>
                 <span>{props.title}</span>
             </div>
-        </div>
+        </button>
     )
 }
 
