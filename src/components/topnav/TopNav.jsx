@@ -14,10 +14,26 @@ import user_image from '../../assets/images/tuat.png'
 
 import user_menu from '../../assets/JsonData/user_menus.json'
 
+
 const curr_user = {
     display_name: 'Tuat Tran',
     image: user_image
 }
+
+const items = [
+    {
+        id:"1",
+        icon:"bx bx-plus",
+        content:"Add a customer ",
+        route:'adduser'
+    },
+    {
+        id:"2",
+        icon:"bx bx-error",
+        content:"Delete a customer",
+        route:'deleteuser'
+    }
+]
 
 const renderNotificationItem = (item, index) => (
     <div className="notification-item" key={index}>
@@ -37,6 +53,15 @@ const renderUserToggle = (user) => (
     </div>
 )
 
+const renderAddUser = (item,index) => (
+    <Link to={`/${item.route}`} >
+        <div className="notification-item">
+            <i className={item.icon}></i>
+            <span>{item.content}</span>
+        </div>
+    </Link>
+)
+
 const renderUserMenu =(item, index) => (
     <Link to='/' key={index}>
         <div className="notification-item">
@@ -45,6 +70,18 @@ const renderUserMenu =(item, index) => (
         </div>
     </Link>
 )
+
+const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      zindex:1
+    },
+};
 
 const Topnav = () => {
     return (
@@ -61,6 +98,14 @@ const Topnav = () => {
                         contentData={user_menu}
                         renderItems={(item, index) => renderUserMenu(item, index)}
                     />
+                </div>
+                <div className="topnav__right-item">
+                    <Dropdown
+                        icon='bx bx-plus'
+                        contentData={items}
+                        renderItems={(item, index) => renderAddUser(item,index)}
+                    />
+                    {/* dropdown here */}
                 </div>
                 <div className="topnav__right-item">
                     <Dropdown
