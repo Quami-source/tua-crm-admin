@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import './sidebar.css'
 
-import logo from '../../assets/images/logo.png'
+import logo from '../../assets/images/Iwerklarge.png'
 
 import sidebar_items from '../../assets/JsonData/sidebar_routes.json'
 
@@ -35,7 +35,7 @@ const Sidebar = props => {
             </div>
             {
                 sidebar_items.map((item, index) => (
-                    <Link to={item.route} key={index}>
+                    <Link to={item.route} key={index} style={{textDecoration:'none',color:'#000'}}>
                         <SidebarItem
                             title={item.display_name}
                             icon={item.icon}

@@ -214,7 +214,7 @@ const Dashboard = () => {
                         <div className='col-6'>
                             <Link to="/users" className='status-card'>
                                 <div className="status-card__icon">
-                                    <i className="bx bx-shopping-bag"></i>
+                                    <i className="bx bx-user"></i>
                                 </div>
                                 <div className="status-card__info">
                                     <h4>10,220</h4>
@@ -227,7 +227,7 @@ const Dashboard = () => {
                         <div className='col-6'>
                             <Link to="/workers" className='status-card'>
                                 <div className="status-card__icon">
-                                    <i className="bx bx-cart"></i>
+                                    <i className="bx bx-shopping-bag"></i>
                                 </div>
                                 <div className="status-card__info">
                                     <h4>5,023</h4>
@@ -294,7 +294,7 @@ const Dashboard = () => {
                             />
                         </div>
                         <div className="card__footer">
-                            <Link to='/'>view all</Link>
+                            <Link style={{textDecoration:'none',color:'#3f3e3c'}} to='/'>view all</Link>
                         </div>
                     </div>
                 </div>
